@@ -16,12 +16,12 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".Numbers" />
-        <activity android:name=".Colors" />
-        <activity android:name=".Family" />
-        <activity android:name=".Phrases" />
-        <activity android:name=".Months" />
+        <activity android:name=".Colors"></activity>
         <activity android:name=".Days"></activity>
+        <activity android:name=".Family"></activity>
+        <activity android:name=".Months"></activity>
+        <activity android:name=".Numbers"></activity>
+        <activity android:name=".Phrases"></activity>
     </application>
 
 </manifest>
