@@ -23,8 +23,7 @@ public class WordAdapter extends ArrayAdapter<Words> {
     public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
         View listItemView = convertView;
         if (listItemView == null) {
-            listItemView = LayoutInflater.from(getContext()).inflate(
-                    R.layout.main_layout, parent, false);
+            listItemView = LayoutInflater.from(getContext()).inflate(R.layout.activity_layout, parent, false);
         }
 
         Words currWord = getItem(position);

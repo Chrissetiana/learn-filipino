@@ -21,4 +21,6 @@
 
     <!-- Category name for the vocabulary words for phrases [CHAR LIMIT=20] -->
     <string name="category_phrases">Phrases</string>
+
+    <string name="content_desc">Icon</string>
 </resources>
