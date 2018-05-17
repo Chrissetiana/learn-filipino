@@ -16,19 +16,19 @@ public class FamilyActivity extends AppCompatActivity {
         setContentView(R.layout.activity_family);
 
         ArrayList<String> fam = new ArrayList<String> ();
-        fam.add("Father");
-        fam.add("Mother");
-        fam.add("Sister");
-        fam.add("Brother");
-        fam.add("Uncle");
-        fam.add("Aunt");
-        fam.add("Grandfather");
-        fam.add("Grandmother");
-        fam.add("Cousin");
-        fam.add("Baby");
+        fam.add("father");
+        fam.add("mother");
+        fam.add("sister");
+        fam.add("brother");
+        fam.add("uncle");
+        fam.add("aunt");
+        fam.add("grandfather");
+        fam.add("grandmother");
+        fam.add("cousin");
+        fam.add("baby");
 
         ArrayAdapter<String> itemsAdapter = new ArrayAdapter<String>(this, android.R.layout.simple_list_item_1, fam);
-        GridView gridView = findViewById(R.id.list_family);
-        gridView.setAdapter(itemsAdapter);
+        ListView listView = findViewById(R.id.list_family);
+        listView.setAdapter(itemsAdapter);
     }
 }
