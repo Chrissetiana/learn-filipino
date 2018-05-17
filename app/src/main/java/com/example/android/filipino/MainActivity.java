@@ -42,11 +42,11 @@ public class MainActivity extends AppCompatActivity {
         });
 
 
-        TextView family = findViewById(R.id.family);
-        family.setOnClickListener(new View.OnClickListener() {
+        TextView people = findViewById(R.id.people);
+        people.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View view) {
-                Intent familyIntent = new Intent(MainActivity.this, FamilyActivity.class);
+                Intent familyIntent = new Intent(MainActivity.this, PeopleActivity.class);
                 startActivity(familyIntent);
             }
         });

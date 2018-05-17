@@ -21,6 +21,6 @@ public class Words {
     }
 
     public int getImageResourceId() {
-        return  imageResourceId;
+        return imageResourceId;
     }
 }

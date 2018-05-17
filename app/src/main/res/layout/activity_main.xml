@@ -43,11 +43,11 @@
         android:background="@android:color/darker_gray" />
 
     <TextView
-        android:id="@+id/family"
+        android:id="@+id/people"
         style="@style/category_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:text="@string/category_family" />
+        android:text="@string/category_people" />
 
     <View
         android:layout_width="match_parent"
