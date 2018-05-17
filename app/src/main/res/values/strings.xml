@@ -1,6 +1,9 @@
 <resources>
     <string name="app_name">Basic Tagalog</string>
 
+    <!-- Category name for the vocabulary words for animals [CHAR LIMIT=20] -->
+    <string name="category_animals">Animals</string>
+
     <!-- Category name for the vocabulary words for colors [CHAR LIMIT=20] -->
     <string name="category_colors">Colors</string>
 

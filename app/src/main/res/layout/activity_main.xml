@@ -7,6 +7,18 @@
     tools:context=".MainActivity">
 
     <TextView
+        android:id="@+id/animals"
+        style="@style/category_style"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:text="@string/category_animals" />
+
+    <View
+        android:layout_width="match_parent"
+        android:layout_height="1dp"
+        android:background="@android:color/darker_gray" />
+
+    <TextView
         android:id="@+id/colors"
         style="@style/category_style"
         android:layout_width="match_parent"

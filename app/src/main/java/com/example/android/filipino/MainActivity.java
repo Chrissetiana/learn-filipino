@@ -14,6 +14,15 @@ public class MainActivity extends AppCompatActivity {
         setContentView(R.layout.activity_main);
 
 
+        TextView animals = findViewById(R.id.animals);
+        animals.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View view) {
+                Intent animalsIntent = new Intent(MainActivity.this, AnimalsActivity.class);
+                startActivity(animalsIntent);
+            }
+        });
+
         TextView colors = findViewById(R.id.colors);
         colors.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -22,7 +31,6 @@ public class MainActivity extends AppCompatActivity {
                 startActivity(colorsIntent);
             }
         });
-
 
         TextView days = findViewById(R.id.days);
         days.setOnClickListener(new View.OnClickListener() {
