@@ -15,12 +15,12 @@ public class PhrasesActivity extends AppCompatActivity {
 
         ArrayList<Word> phrases = new ArrayList<>();
 
-        phrases.add(new Word("good morning", "magandang umaga", R.mipmap.ic_launcher));
-        phrases.add(new Word("good afternoon", "magandang tanghali / hapon", R.mipmap.ic_launcher));
-        phrases.add(new Word("good evening", "magandang gabi", R.mipmap.ic_launcher));
-        phrases.add(new Word("good day", "magandang araw", R.mipmap.ic_launcher));
-        phrases.add(new Word("how are you", "kamusta [ka]", R.mipmap.ic_launcher));
-        phrases.add(new Word("good bye", "paalam", R.mipmap.ic_launcher));
+        phrases.add(new Word("good morning", "magandang umaga"));
+        phrases.add(new Word("good afternoon", "magandang tanghali / hapon"));
+        phrases.add(new Word("good evening", "magandang gabi"));
+        phrases.add(new Word("good day", "magandang araw"));
+        phrases.add(new Word("how are you", "kamusta [ka]"));
+        phrases.add(new Word("good bye", "paalam"));
 
         WordAdapter adapter = new WordAdapter(this, phrases);
         ListView listView = findViewById(R.id.list_words);
