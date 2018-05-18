@@ -15,16 +15,16 @@ public class NumbersActivity extends AppCompatActivity {
 
         ArrayList<Word> numbers = new ArrayList<>();
 
-        numbers.add(new Word("one", "isa", 1));
-        numbers.add(new Word("two", "dalawa", 2));
-        numbers.add(new Word("three", "tatlo", 3));
-        numbers.add(new Word("four", "apat", 4));
-        numbers.add(new Word("five", "lima", 5));
-        numbers.add(new Word("six", "anim", 6));
-        numbers.add(new Word("seven", "pito", 7));
-        numbers.add(new Word("eight", "walo", 8));
-        numbers.add(new Word("nine", "siyam", 9));
-        numbers.add(new Word("ten", "sampu", 10));
+        numbers.add(new Word("one", "isa", R.mipmap.ic_launcher));
+        numbers.add(new Word("two", "dalawa", R.mipmap.ic_launcher));
+        numbers.add(new Word("three", "tatlo", R.mipmap.ic_launcher));
+        numbers.add(new Word("four", "apat", R.mipmap.ic_launcher));
+        numbers.add(new Word("five", "lima", R.mipmap.ic_launcher));
+        numbers.add(new Word("six", "anim", R.mipmap.ic_launcher));
+        numbers.add(new Word("seven", "pito", R.mipmap.ic_launcher));
+        numbers.add(new Word("eight", "walo", R.mipmap.ic_launcher));
+        numbers.add(new Word("nine", "siyam", R.mipmap.ic_launcher));
+        numbers.add(new Word("ten", "sampu", R.mipmap.ic_launcher));
 
         WordAdapter adapter = new WordAdapter(this, numbers);
         ListView listView = findViewById(R.id.list_words);

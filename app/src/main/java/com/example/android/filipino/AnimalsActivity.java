@@ -15,10 +15,10 @@ public class AnimalsActivity extends AppCompatActivity {
 
         ArrayList<Word> animals = new ArrayList<>();
 
-        animals.add(new Word("dog", "aso", 1));
-        animals.add(new Word("cat", "pusa", 2));
-        animals.add(new Word("fish", "isda", 3));
-        animals.add(new Word("bird", "ibon", 4));
+        animals.add(new Word("dog", "aso", R.mipmap.ic_launcher));
+        animals.add(new Word("cat", "pusa", R.mipmap.ic_launcher));
+        animals.add(new Word("fish", "isda", R.mipmap.ic_launcher));
+        animals.add(new Word("bird", "ibon", R.mipmap.ic_launcher));
 
         WordAdapter adapter = new WordAdapter(this, animals);
         ListView listView = findViewById(R.id.list_words);

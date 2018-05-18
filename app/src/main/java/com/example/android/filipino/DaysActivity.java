@@ -15,13 +15,13 @@ public class DaysActivity extends AppCompatActivity {
 
         ArrayList<Word> days = new ArrayList<>();
 
-        days.add(new Word("monday", "lunes", 1));
-        days.add(new Word("tuesday", "martes", 2));
-        days.add(new Word("wednesday", "miyerkules", 3));
-        days.add(new Word("thursday", "huwebes", 4));
-        days.add(new Word("friday", "biyernes", 5));
-        days.add(new Word("saturday", "sabado", 6));
-        days.add(new Word("sunday", "linggo", 7));
+        days.add(new Word("monday", "lunes", R.mipmap.ic_launcher));
+        days.add(new Word("tuesday", "martes", R.mipmap.ic_launcher));
+        days.add(new Word("wednesday", "miyerkules", R.mipmap.ic_launcher));
+        days.add(new Word("thursday", "huwebes", R.mipmap.ic_launcher));
+        days.add(new Word("friday", "biyernes", R.mipmap.ic_launcher));
+        days.add(new Word("saturday", "sabado", R.mipmap.ic_launcher));
+        days.add(new Word("sunday", "linggo", R.mipmap.ic_launcher));
 
         WordAdapter adapter = new WordAdapter(this, days);
         ListView listView = findViewById(R.id.list_words);

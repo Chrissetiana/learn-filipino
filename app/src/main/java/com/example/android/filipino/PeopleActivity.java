@@ -15,17 +15,17 @@ public class PeopleActivity extends AppCompatActivity {
 
         ArrayList<Word> person = new ArrayList<>();
 
-        person.add(new Word("father", "tatay / ama", 1));
-        person.add(new Word("mother", "nanay / ina", 2));
-        person.add(new Word("child", "anak", 3));
-        person.add(new Word("sibling", "kapatid", 4));
-        person.add(new Word("big brother", "kuya", 5));
-        person.add(new Word("big sister", "ate", 6));
-        person.add(new Word("grandfather", "lolo", 7));
-        person.add(new Word("grandmother", "lola", 8));
-        person.add(new Word("uncle", "tito", 9));
-        person.add(new Word("aunt", "tita", 10));
-        person.add(new Word("cousin", "pinsan", 11));
+        person.add(new Word("father", "tatay / ama", R.mipmap.ic_launcher));
+        person.add(new Word("mother", "nanay / ina", R.mipmap.ic_launcher));
+        person.add(new Word("child", "anak", R.mipmap.ic_launcher));
+        person.add(new Word("sibling", "kapatid", R.mipmap.ic_launcher));
+        person.add(new Word("big brother", "kuya", R.mipmap.ic_launcher));
+        person.add(new Word("big sister", "ate", R.mipmap.ic_launcher));
+        person.add(new Word("grandfather", "lolo", R.mipmap.ic_launcher));
+        person.add(new Word("grandmother", "lola", R.mipmap.ic_launcher));
+        person.add(new Word("uncle", "tito", R.mipmap.ic_launcher));
+        person.add(new Word("aunt", "tita", R.mipmap.ic_launcher));
+        person.add(new Word("cousin", "pinsan", R.mipmap.ic_launcher));
 
         WordAdapter adapter = new WordAdapter(this, person);
         ListView listView = findViewById(R.id.list_words);
