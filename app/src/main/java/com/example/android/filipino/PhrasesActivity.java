@@ -13,14 +13,14 @@ public class PhrasesActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        ArrayList<Words> phrases = new ArrayList<>();
+        ArrayList<Word> phrases = new ArrayList<>();
 
-        phrases.add(new Words("good morning", "magandang umaga", 1));
-        phrases.add(new Words("good afternoon", "magandang tanghali / hapon", 2));
-        phrases.add(new Words("good evening", "magandang gabi", 3));
-        phrases.add(new Words("good day", "magandang araw", 4));
-        phrases.add(new Words("how are you", "kamusta [ka]", 5));
-        phrases.add(new Words("good bye", "paalam", 6));
+        phrases.add(new Word("good morning", "magandang umaga", 1));
+        phrases.add(new Word("good afternoon", "magandang tanghali / hapon", 2));
+        phrases.add(new Word("good evening", "magandang gabi", 3));
+        phrases.add(new Word("good day", "magandang araw", 4));
+        phrases.add(new Word("how are you", "kamusta [ka]", 5));
+        phrases.add(new Word("good bye", "paalam", 6));
 
         WordAdapter adapter = new WordAdapter(this, phrases);
         ListView listView = findViewById(R.id.list_words);

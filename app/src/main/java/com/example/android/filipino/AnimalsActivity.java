@@ -13,12 +13,12 @@ public class AnimalsActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        ArrayList<Words> animals = new ArrayList<>();
+        ArrayList<Word> animals = new ArrayList<>();
 
-        animals.add(new Words("dog", "aso", 1));
-        animals.add(new Words("cat", "pusa", 2));
-        animals.add(new Words("fish", "isda", 3));
-        animals.add(new Words("bird", "ibon", 4));
+        animals.add(new Word("dog", "aso", 1));
+        animals.add(new Word("cat", "pusa", 2));
+        animals.add(new Word("fish", "isda", 3));
+        animals.add(new Word("bird", "ibon", 4));
 
         WordAdapter adapter = new WordAdapter(this, animals);
         ListView listView = findViewById(R.id.list_words);

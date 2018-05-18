@@ -13,19 +13,19 @@ public class PeopleActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
 
-        ArrayList<Words> person = new ArrayList<>();
+        ArrayList<Word> person = new ArrayList<>();
 
-        person.add(new Words("father", "tatay / ama", 1));
-        person.add(new Words("mother", "nanay / ina", 2));
-        person.add(new Words("child", "anak", 3));
-        person.add(new Words("sibling", "kapatid", 4));
-        person.add(new Words("big brother", "kuya", 5));
-        person.add(new Words("big sister", "ate", 6));
-        person.add(new Words("grandfather", "lolo", 7));
-        person.add(new Words("grandmother", "lola", 8));
-        person.add(new Words("uncle", "tito", 9));
-        person.add(new Words("aunt", "tita", 10));
-        person.add(new Words("cousin", "pinsan", 11));
+        person.add(new Word("father", "tatay / ama", 1));
+        person.add(new Word("mother", "nanay / ina", 2));
+        person.add(new Word("child", "anak", 3));
+        person.add(new Word("sibling", "kapatid", 4));
+        person.add(new Word("big brother", "kuya", 5));
+        person.add(new Word("big sister", "ate", 6));
+        person.add(new Word("grandfather", "lolo", 7));
+        person.add(new Word("grandmother", "lola", 8));
+        person.add(new Word("uncle", "tito", 9));
+        person.add(new Word("aunt", "tita", 10));
+        person.add(new Word("cousin", "pinsan", 11));
 
         WordAdapter adapter = new WordAdapter(this, person);
         ListView listView = findViewById(R.id.list_words);

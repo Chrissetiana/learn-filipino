@@ -12,21 +12,21 @@ import android.widget.TextView;
 
 import java.util.ArrayList;
 
-public class WordAdapter extends ArrayAdapter<Words> {
+public class WordAdapter extends ArrayAdapter<Word> {
 
-    public WordAdapter(Activity context, ArrayList<Words> words) {
+    public WordAdapter(Activity context, ArrayList<Word> words) {
         super(context, 0, words);
     }
 
-    @NonNull
     @Override
-    public View getView(int position, @Nullable View convertView, @NonNull ViewGroup parent) {
+    @NonNull
+    public View getView(int position, @Nullable View convertView, @Nullable ViewGroup parent) {
         View listItemView = convertView;
         if (listItemView == null) {
             listItemView = LayoutInflater.from(getContext()).inflate(R.layout.activity_layout, parent, false);
         }
 
-        Words currWord = getItem(position);
+        Word currWord = getItem(position);
 
         TextView engTextView = listItemView.findViewById(R.id.text_english);
         engTextView.setText(currWord.getEnglishTranslation());

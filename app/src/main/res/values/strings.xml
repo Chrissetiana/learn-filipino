@@ -11,7 +11,7 @@
     <string name="category_days">Days</string>
 
     <!-- Category name for the vocabulary words for family [CHAR LIMIT=20] -->
-    <string name="category_people">Family</string>
+    <string name="category_people">People</string>
 
     <!-- Category name for the vocabulary words for months [CHAR LIMIT=20] -->
     <string name="category_months">Months</string>
