@@ -34,8 +34,13 @@ public class WordAdapter extends ArrayAdapter<Word> {
         TextView filTextView = listItemView.findViewById(R.id.text_filipino);
         filTextView.setText(currWord.getFilipinoTranslation());
 
-        ImageView iconView = listItemView.findViewById(R.id.text_icon);
-        iconView.setImageResource(currWord.getImageResourceId());
+        ImageView imageView = listItemView.findViewById(R.id.text_icon);
+        if (currWord.hasImage()) {
+            imageView.setImageResource(currWord.getImageResourceId());
+            imageView.setVisibility(View.VISIBLE);
+        } else {
+            imageView.setVisibility(View.GONE);
+        }
 
         return listItemView;
     }
