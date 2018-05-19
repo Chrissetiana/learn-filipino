@@ -3,4 +3,26 @@
     <color name="colorPrimary">#3F51B5</color>
     <color name="colorPrimaryDark">#303F9F</color>
     <color name="colorAccent">#FF4081</color>
+
+    <!-- Background color for the animals category -->
+    <color name="category_animals">#CD5C5C</color>
+
+    <!-- Background color for the colors category -->
+    <color name="category_colors">#FF8C00</color>
+
+    <!-- Background color for the days category -->
+    <color name="category_days">#FFD700</color>
+
+    <!-- Background color for the months category -->
+    <color name="category_months">#00FF7F</color>
+
+    <!-- Background color for the numbers category -->
+    <color name="category_numbers">#48D1CC</color>
+
+    <!-- Background color for the people category -->
+    <color name="category_people">#7B68EE</color>
+
+    <!-- Background color for the phrases category -->
+    <color name="category_phrases">#191970</color>
+
 </resources>
