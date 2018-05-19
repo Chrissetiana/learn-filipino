@@ -2,10 +2,10 @@ package com.example.android.filipino;
 
 public class Word {
 
+    private static final int NO_IMAGE_PROVIDED = -1;
     private String englishTranslation;
     private String filipinoTranslation;
     private int imageResourceId = NO_IMAGE_PROVIDED;
-    private static final int NO_IMAGE_PROVIDED = -1;
 
     public Word(String engTrans, String filTrans) {
         englishTranslation = engTrans;

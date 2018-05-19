@@ -25,13 +25,12 @@
         <TextView
             android:id="@+id/text_english"
             style="@style/word_style"
-            android:textStyle="bold"
             tools:text="English" />
 
         <TextView
             android:id="@+id/text_filipino"
             style="@style/word_style"
-            android:textStyle="italic"
+            android:textStyle="bold"
             tools:text="Filipino" />
 
     </LinearLayout>
