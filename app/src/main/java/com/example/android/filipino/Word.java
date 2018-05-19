@@ -6,16 +6,19 @@ public class Word {
     private String englishTranslation;
     private String filipinoTranslation;
     private int imageResourceId = NO_IMAGE_PROVIDED;
+    private int audioResourceId;
 
-    public Word(String engTrans, String filTrans) {
+    public Word(String engTrans, String filTrans, int audioId) {
         englishTranslation = engTrans;
         filipinoTranslation = filTrans;
+        audioResourceId = audioId;
     }
 
-    public Word(String engTrans, String filTrans, int imageId) {
+    public Word(String engTrans, String filTrans, int imageId, int audioId) {
         englishTranslation = engTrans;
         filipinoTranslation = filTrans;
         imageResourceId = imageId;
+        audioResourceId = audioId;
     }
 
     public String getEnglishTranslation() {
@@ -32,5 +35,9 @@ public class Word {
 
     public boolean hasImage() {
         return getImageResourceId() != NO_IMAGE_PROVIDED;
+    }
+
+    public int getAudioResourceId() {
+        return audioResourceId;
     }
 }

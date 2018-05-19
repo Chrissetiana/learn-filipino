@@ -20,7 +20,8 @@
         android:layout_weight="1"
         android:orientation="vertical"
         android:paddingLeft="8dp"
-        android:paddingStart="8dp">
+        android:paddingStart="8dp"
+        android:textAppearance="?android:textAppearanceMedium">
 
         <TextView
             android:id="@+id/text_english"
