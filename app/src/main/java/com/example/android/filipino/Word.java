@@ -40,4 +40,15 @@ public class Word {
     public int getAudioResourceId() {
         return audioResourceId;
     }
+
+    @Override
+    public String toString() {
+        return "Word{" +
+                "englishTranslation='" + englishTranslation + '\'' +
+                ", filipinoTranslation='" + filipinoTranslation + '\'' +
+                ", imageResourceId=" + imageResourceId +
+                ", audioResourceId=" + audioResourceId +
+                '}';
+    }
+
 }

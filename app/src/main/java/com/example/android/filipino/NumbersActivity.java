@@ -3,6 +3,7 @@ package com.example.android.filipino;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
+import android.util.Log;
 import android.view.View;
 import android.widget.AdapterView;
 import android.widget.ListView;
@@ -38,6 +39,7 @@ public class NumbersActivity extends AppCompatActivity {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
                 Word currWord = words.get(position);
+                Log.v("NumbersActivity", "Current word: " + currWord);
                 mediaPlayer = MediaPlayer.create(NumbersActivity.this, currWord.getAudioResourceId());
                 mediaPlayer.start();
             }
