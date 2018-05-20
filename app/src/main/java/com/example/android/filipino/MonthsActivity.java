@@ -13,6 +13,12 @@ import java.util.ArrayList;
 public class MonthsActivity extends AppCompatActivity {
 
     private MediaPlayer mediaPlayer;
+    private MediaPlayer.OnCompletionListener completionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mp) {
+            releaseMediaPlayer();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -44,7 +50,21 @@ public class MonthsActivity extends AppCompatActivity {
                 Log.v("MonthsActivity", "Current word: " + currWord);
                 mediaPlayer = MediaPlayer.create(MonthsActivity.this, currWord.getAudioResourceId());
                 mediaPlayer.start();
+                mediaPlayer.setOnCompletionListener(completionListener);
             }
         });
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
+    private void releaseMediaPlayer() {
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
     }
 }

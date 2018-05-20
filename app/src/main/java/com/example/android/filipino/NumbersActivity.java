@@ -13,6 +13,12 @@ import java.util.ArrayList;
 public class NumbersActivity extends AppCompatActivity {
 
     private MediaPlayer mediaPlayer;
+    private MediaPlayer.OnCompletionListener completionListener = new MediaPlayer.OnCompletionListener() {
+        @Override
+        public void onCompletion(MediaPlayer mp) {
+            releaseMediaPlayer();
+        }
+    };
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -21,16 +27,16 @@ public class NumbersActivity extends AppCompatActivity {
 
         final ArrayList<Word> words = new ArrayList<>();
 
-        words.add(new Word("one", "isa", R.mipmap.ic_launcher, R.raw.bass));
-        words.add(new Word("two", "dalawa", R.mipmap.ic_launcher, R.raw.bass));
-        words.add(new Word("three", "tatlo", R.mipmap.ic_launcher, R.raw.bass));
-        words.add(new Word("four", "apat", R.mipmap.ic_launcher, R.raw.bass));
-        words.add(new Word("five", "lima", R.mipmap.ic_launcher, R.raw.bass));
-        words.add(new Word("six", "anim", R.mipmap.ic_launcher, R.raw.bass));
-        words.add(new Word("seven", "pito", R.mipmap.ic_launcher, R.raw.bass));
-        words.add(new Word("eight", "walo", R.mipmap.ic_launcher, R.raw.bass));
-        words.add(new Word("nine", "siyam", R.mipmap.ic_launcher, R.raw.bass));
-        words.add(new Word("ten", "sampu", R.mipmap.ic_launcher, R.raw.bass));
+        words.add(new Word("one", "isa", R.mipmap.ic_launcher, R.raw.ambient));
+        words.add(new Word("two", "dalawa", R.mipmap.ic_launcher, R.raw.ambient));
+        words.add(new Word("three", "tatlo", R.mipmap.ic_launcher, R.raw.ambient));
+        words.add(new Word("four", "apat", R.mipmap.ic_launcher, R.raw.ambient));
+        words.add(new Word("five", "lima", R.mipmap.ic_launcher, R.raw.ambient));
+        words.add(new Word("six", "anim", R.mipmap.ic_launcher, R.raw.ambient));
+        words.add(new Word("seven", "pito", R.mipmap.ic_launcher, R.raw.ambient));
+        words.add(new Word("eight", "walo", R.mipmap.ic_launcher, R.raw.ambient));
+        words.add(new Word("nine", "siyam", R.mipmap.ic_launcher, R.raw.ambient));
+        words.add(new Word("ten", "sampu", R.mipmap.ic_launcher, R.raw.ambient));
 
         WordAdapter adapter = new WordAdapter(this, words);
         ListView listView = findViewById(R.id.list_words);
@@ -42,7 +48,21 @@ public class NumbersActivity extends AppCompatActivity {
                 Log.v("NumbersActivity", "Current word: " + currWord);
                 mediaPlayer = MediaPlayer.create(NumbersActivity.this, currWord.getAudioResourceId());
                 mediaPlayer.start();
+                mediaPlayer.setOnCompletionListener(completionListener);
             }
         });
+    }
+
+    @Override
+    protected void onStop() {
+        super.onStop();
+        releaseMediaPlayer();
+    }
+
+    private void releaseMediaPlayer() {
+        if (mediaPlayer != null) {
+            mediaPlayer.release();
+            mediaPlayer = null;
+        }
     }
 }
