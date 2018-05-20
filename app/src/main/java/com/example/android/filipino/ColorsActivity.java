@@ -1,5 +1,7 @@
 package com.example.android.filipino;
 
+import android.content.Context;
+import android.media.AudioManager;
 import android.media.MediaPlayer;
 import android.os.Bundle;
 import android.support.v7.app.AppCompatActivity;
@@ -12,7 +14,21 @@ import java.util.ArrayList;
 
 public class ColorsActivity extends AppCompatActivity {
 
+    private AudioManager audioManager;
     private MediaPlayer mediaPlayer;
+    private AudioManager.OnAudioFocusChangeListener audioFocusChangeListener = new AudioManager.OnAudioFocusChangeListener() {
+        @Override
+        public void onAudioFocusChange(int focusChange) {
+            if (focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT || focusChange == AudioManager.AUDIOFOCUS_LOSS_TRANSIENT_CAN_DUCK) {
+                mediaPlayer.pause();
+                mediaPlayer.seekTo(0);
+            } else if (focusChange == AudioManager.AUDIOFOCUS_GAIN) {
+                mediaPlayer.start();
+            } else if (focusChange == AudioManager.AUDIOFOCUS_LOSS) {
+                releaseMediaPlayer();
+            }
+        }
+    };
     private MediaPlayer.OnCompletionListener completionListener = new MediaPlayer.OnCompletionListener() {
         @Override
         public void onCompletion(MediaPlayer mp) {
@@ -24,6 +40,8 @@ public class ColorsActivity extends AppCompatActivity {
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.activity_list);
+
+        audioManager = (AudioManager) getSystemService(Context.AUDIO_SERVICE);
 
         final ArrayList<Word> words = new ArrayList<>();
 
@@ -37,7 +55,6 @@ public class ColorsActivity extends AppCompatActivity {
         words.add(new Word("violet", "lila", R.mipmap.ic_launcher, R.raw.bongo));
         words.add(new Word("yellow", "dilaw", R.mipmap.ic_launcher, R.raw.bongo));
         words.add(new Word("white", "puti", R.mipmap.ic_launcher, R.raw.bongo));
-        // words.add(new Word("red", "weṭeṭṭi", R.drawable.color_red, R.raw.bongo));
 
         WordAdapter adapter = new WordAdapter(this, words);
         ListView listView = findViewById(R.id.list_words);
@@ -45,11 +62,17 @@ public class ColorsActivity extends AppCompatActivity {
         listView.setOnItemClickListener(new AdapterView.OnItemClickListener() {
             @Override
             public void onItemClick(AdapterView<?> parent, View view, int position, long id) {
+                releaseMediaPlayer();
+
                 Word currWord = words.get(position);
                 Log.v("ColorsActivity", "Current word: " + currWord);
-                mediaPlayer = MediaPlayer.create(ColorsActivity.this, currWord.getAudioResourceId());
-                mediaPlayer.start();
-                mediaPlayer.setOnCompletionListener(completionListener);
+
+                int result = audioManager.requestAudioFocus(audioFocusChangeListener, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
+                if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
+                    mediaPlayer = MediaPlayer.create(ColorsActivity.this, currWord.getAudioResourceId());
+                    mediaPlayer.start();
+                    mediaPlayer.setOnCompletionListener(completionListener);
+                }
             }
         });
     }
@@ -64,6 +87,7 @@ public class ColorsActivity extends AppCompatActivity {
         if (mediaPlayer != null) {
             mediaPlayer.release();
             mediaPlayer = null;
+            audioManager.abandonAudioFocus(audioFocusChangeListener);
         }
     }
 }
