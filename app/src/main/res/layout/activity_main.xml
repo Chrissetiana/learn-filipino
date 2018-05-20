@@ -6,11 +6,26 @@
     android:orientation="vertical"
     tools:context=".MainActivity">
 
+    <!--
+    <FrameLayout
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:background="@color/category_colors">
+
+        <TextView
+            android:id="@+id/colors"
+            style="@style/CategoryStyle"
+            android:background="?android:attr/selectableItemBackground"
+            android:text="@string/category_colors" />
+    </FrameLayout>
+    -->
+
     <TextView
         android:id="@+id/animals"
         style="@style/category_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
         android:text="@string/category_animals" />
 
     <View
@@ -23,6 +38,7 @@
         style="@style/category_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
         android:text="@string/category_colors" />
 
     <View
@@ -35,6 +51,7 @@
         style="@style/category_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
         android:text="@string/category_days" />
 
     <View
@@ -47,6 +64,7 @@
         style="@style/category_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
         android:text="@string/category_months" />
 
     <View
@@ -59,6 +77,7 @@
         style="@style/category_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
         android:text="@string/category_numbers" />
 
     <View
@@ -71,6 +90,7 @@
         style="@style/category_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
         android:text="@string/category_people" />
 
     <View
@@ -83,10 +103,12 @@
         style="@style/category_style"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
+        android:background="?android:attr/selectableItemBackground"
         android:text="@string/category_phrases" />
 
     <View
         android:layout_width="match_parent"
         android:layout_height="1dp"
         android:background="@android:color/darker_gray" />
+
 </LinearLayout>
