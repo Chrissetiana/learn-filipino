@@ -1,4 +1,4 @@
-package com.example.android.filipino;
+package com.chrissetiana.android.learnfilipino;
 
 import android.content.Context;
 import android.media.AudioManager;

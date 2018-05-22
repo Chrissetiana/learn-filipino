@@ -1,5 +1,5 @@
 <resources>
-    <string name="app_name">Basic Tagalog</string>
+    <string name="app_name">Learn Filipino</string>
 
     <!-- Category name for the vocabulary words for animals [CHAR LIMIT=20] -->
     <string name="category_animals">Animals</string>

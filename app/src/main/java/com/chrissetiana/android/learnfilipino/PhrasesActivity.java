@@ -1,4 +1,4 @@
-package com.example.android.filipino;
+package com.chrissetiana.android.learnfilipino;
 
 import android.content.Context;
 import android.media.AudioManager;
@@ -12,7 +12,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class NumbersActivity extends AppCompatActivity {
+public class PhrasesActivity extends AppCompatActivity {
 
     private AudioManager audioManager;
     private MediaPlayer mediaPlayer;
@@ -45,16 +45,13 @@ public class NumbersActivity extends AppCompatActivity {
 
         final ArrayList<Word> words = new ArrayList<>();
 
-        words.add(new Word("one", "isa", R.mipmap.ic_launcher, R.raw.ambient));
-        words.add(new Word("two", "dalawa", R.mipmap.ic_launcher, R.raw.ambient));
-        words.add(new Word("three", "tatlo", R.mipmap.ic_launcher, R.raw.ambient));
-        words.add(new Word("four", "apat", R.mipmap.ic_launcher, R.raw.ambient));
-        words.add(new Word("five", "lima", R.mipmap.ic_launcher, R.raw.ambient));
-        words.add(new Word("six", "anim", R.mipmap.ic_launcher, R.raw.ambient));
-        words.add(new Word("seven", "pito", R.mipmap.ic_launcher, R.raw.ambient));
-        words.add(new Word("eight", "walo", R.mipmap.ic_launcher, R.raw.ambient));
-        words.add(new Word("nine", "siyam", R.mipmap.ic_launcher, R.raw.ambient));
-        words.add(new Word("ten", "sampu", R.mipmap.ic_launcher, R.raw.ambient));
+        words.add(new Word("good morning", "magandang umaga", R.raw.bass));
+        words.add(new Word("good afternoon", "magandang tanghali / hapon", R.raw.bass));
+        words.add(new Word("good evening", "magandang gabi", R.raw.bass));
+        words.add(new Word("good day", "magandang araw", R.raw.bass));
+        words.add(new Word("how are you", "kamusta [ka]", R.raw.bass));
+        words.add(new Word("good bye", "paalam", R.raw.bass));
+        words.add(new Word("sorry", "patawad", R.raw.bass));
 
         WordAdapter adapter = new WordAdapter(this, words);
         ListView listView = findViewById(R.id.list_words);
@@ -65,11 +62,11 @@ public class NumbersActivity extends AppCompatActivity {
                 releaseMediaPlayer();
 
                 Word currWord = words.get(position);
-                Log.v("NumbersActivity", "Current word: " + currWord);
+                Log.v("PhrasesActivity", "Current word: " + currWord);
 
                 int result = audioManager.requestAudioFocus(audioFocusChangeListener, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
                 if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-                    mediaPlayer = MediaPlayer.create(NumbersActivity.this, currWord.getAudioResourceId());
+                    mediaPlayer = MediaPlayer.create(PhrasesActivity.this, currWord.getAudioResourceId());
                     mediaPlayer.start();
                     mediaPlayer.setOnCompletionListener(completionListener);
                 }
