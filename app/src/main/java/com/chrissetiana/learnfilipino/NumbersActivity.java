@@ -1,4 +1,4 @@
-package com.chrissetiana.android.learnfilipino;
+package com.chrissetiana.learnfilipino;
 
 import android.content.Context;
 import android.media.AudioManager;
@@ -12,7 +12,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class MonthsActivity extends AppCompatActivity {
+public class NumbersActivity extends AppCompatActivity {
 
     private AudioManager audioManager;
     private MediaPlayer mediaPlayer;
@@ -45,18 +45,16 @@ public class MonthsActivity extends AppCompatActivity {
 
         final ArrayList<Word> words = new ArrayList<>();
 
-        words.add(new Word("january", "enero", R.mipmap.ic_launcher, R.raw.snare));
-        words.add(new Word("february", "pebrero", R.mipmap.ic_launcher, R.raw.snare));
-        words.add(new Word("march", "marso", R.mipmap.ic_launcher, R.raw.snare));
-        words.add(new Word("april", "abril", R.mipmap.ic_launcher, R.raw.snare));
-        words.add(new Word("may", "mayo", R.mipmap.ic_launcher, R.raw.snare));
-        words.add(new Word("june", "hunyo", R.mipmap.ic_launcher, R.raw.snare));
-        words.add(new Word("july", "hulyo", R.mipmap.ic_launcher, R.raw.snare));
-        words.add(new Word("august", "agosto", R.mipmap.ic_launcher, R.raw.snare));
-        words.add(new Word("september", "setyembre", R.mipmap.ic_launcher, R.raw.snare));
-        words.add(new Word("october", "oktubre", R.mipmap.ic_launcher, R.raw.snare));
-        words.add(new Word("november", "nobyembre", R.mipmap.ic_launcher, R.raw.snare));
-        words.add(new Word("december", "disyembre", R.mipmap.ic_launcher, R.raw.snare));
+        words.add(new Word("one", "isa", R.mipmap.ic_launcher, R.raw.ambient));
+        words.add(new Word("two", "dalawa", R.mipmap.ic_launcher, R.raw.ambient));
+        words.add(new Word("three", "tatlo", R.mipmap.ic_launcher, R.raw.ambient));
+        words.add(new Word("four", "apat", R.mipmap.ic_launcher, R.raw.ambient));
+        words.add(new Word("five", "lima", R.mipmap.ic_launcher, R.raw.ambient));
+        words.add(new Word("six", "anim", R.mipmap.ic_launcher, R.raw.ambient));
+        words.add(new Word("seven", "pito", R.mipmap.ic_launcher, R.raw.ambient));
+        words.add(new Word("eight", "walo", R.mipmap.ic_launcher, R.raw.ambient));
+        words.add(new Word("nine", "siyam", R.mipmap.ic_launcher, R.raw.ambient));
+        words.add(new Word("ten", "sampu", R.mipmap.ic_launcher, R.raw.ambient));
 
         WordAdapter adapter = new WordAdapter(this, words);
         ListView listView = findViewById(R.id.list_words);
@@ -67,11 +65,11 @@ public class MonthsActivity extends AppCompatActivity {
                 releaseMediaPlayer();
 
                 Word currWord = words.get(position);
-                Log.v("MonthsActivity", "Current word: " + currWord);
+                Log.v("NumbersActivity", "Current word: " + currWord);
 
                 int result = audioManager.requestAudioFocus(audioFocusChangeListener, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
                 if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-                    mediaPlayer = MediaPlayer.create(MonthsActivity.this, currWord.getAudioResourceId());
+                    mediaPlayer = MediaPlayer.create(NumbersActivity.this, currWord.getAudioResourceId());
                     mediaPlayer.start();
                     mediaPlayer.setOnCompletionListener(completionListener);
                 }

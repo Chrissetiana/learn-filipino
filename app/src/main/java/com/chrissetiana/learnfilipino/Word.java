@@ -1,4 +1,4 @@
-package com.chrissetiana.android.learnfilipino;
+package com.chrissetiana.learnfilipino;
 
 public class Word {
 

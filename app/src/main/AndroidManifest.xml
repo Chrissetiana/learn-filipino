@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="utf-8"?>
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
-    package="com.chrissetiana.android.learnfilipino">
+    package="com.chrissetiana.learnfilipino">
 
     <application
         android:allowBackup="true"
@@ -10,7 +10,7 @@
         android:supportsRtl="true"
         android:theme="@style/AppTheme">
         <activity
-            android:name="com.chrissetiana.android.learnfilipino.MainActivity"
+            android:name="com.chrissetiana.learnfilipino.MainActivity"
             android:theme="@style/AppTheme">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -19,74 +19,74 @@
             </intent-filter>
         </activity>
         <activity
-            android:name="com.chrissetiana.android.learnfilipino.AnimalsActivity"
+            android:name="com.chrissetiana.learnfilipino.AnimalsActivity"
             android:label="@string/category_animals"
-            android:parentActivityName="com.chrissetiana.android.learnfilipino.MainActivity">
+            android:parentActivityName="com.chrissetiana.learnfilipino.MainActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.chrissetiana.android.learnfilipino.MainActivity" />
+                android:value="com.chrissetiana.learnfilipino.MainActivity" />
         </activity>
         <activity
-            android:name="com.chrissetiana.android.learnfilipino.ColorsActivity"
+            android:name="com.chrissetiana.learnfilipino.ColorsActivity"
             android:label="@string/category_colors"
-            android:parentActivityName="com.chrissetiana.android.learnfilipino.MainActivity">
+            android:parentActivityName="com.chrissetiana.learnfilipino.MainActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.chrissetiana.android.learnfilipino.MainActivity" />
+                android:value="com.chrissetiana.learnfilipino.MainActivity" />
         </activity>
         <activity
-            android:name="com.chrissetiana.android.learnfilipino.DaysActivity"
+            android:name="com.chrissetiana.learnfilipino.DaysActivity"
             android:label="@string/category_days"
-            android:parentActivityName="com.chrissetiana.android.learnfilipino.MainActivity">
+            android:parentActivityName="com.chrissetiana.learnfilipino.MainActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.chrissetiana.android.learnfilipino.MainActivity" />
+                android:value="com.chrissetiana.learnfilipino.MainActivity" />
         </activity>
         <activity
-            android:name="com.chrissetiana.android.learnfilipino.PeopleActivity"
+            android:name="com.chrissetiana.learnfilipino.PeopleActivity"
             android:label="@string/category_people"
-            android:parentActivityName="com.chrissetiana.android.learnfilipino.MainActivity">
+            android:parentActivityName="com.chrissetiana.learnfilipino.MainActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.chrissetiana.android.learnfilipino.MainActivity" />
+                android:value="com.chrissetiana.learnfilipino.MainActivity" />
         </activity>
         <activity
-            android:name="com.chrissetiana.android.learnfilipino.MonthsActivity"
+            android:name="com.chrissetiana.learnfilipino.MonthsActivity"
             android:label="@string/category_months"
-            android:parentActivityName="com.chrissetiana.android.learnfilipino.MainActivity">
+            android:parentActivityName="com.chrissetiana.learnfilipino.MainActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.chrissetiana.android.learnfilipino.MainActivity" />
+                android:value="com.chrissetiana.learnfilipino.MainActivity" />
         </activity>
         <activity
-            android:name="com.chrissetiana.android.learnfilipino.NumbersActivity"
+            android:name="com.chrissetiana.learnfilipino.NumbersActivity"
             android:label="@string/category_numbers"
-            android:parentActivityName="com.chrissetiana.android.learnfilipino.MainActivity">
+            android:parentActivityName="com.chrissetiana.learnfilipino.MainActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.chrissetiana.android.learnfilipino.MainActivity" />
+                android:value="com.chrissetiana.learnfilipino.MainActivity" />
         </activity>
         <activity
-            android:name="com.chrissetiana.android.learnfilipino.PhrasesActivity"
+            android:name="com.chrissetiana.learnfilipino.PhrasesActivity"
             android:label="@string/category_phrases"
-            android:parentActivityName="com.chrissetiana.android.learnfilipino.MainActivity">
+            android:parentActivityName="com.chrissetiana.learnfilipino.MainActivity">
 
             <!-- Parent activity meta-data to support 4.0 and lower -->
             <meta-data
                 android:name="android.support.PARENT_ACTIVITY"
-                android:value="com.chrissetiana.android.learnfilipino.MainActivity" />
+                android:value="com.chrissetiana.learnfilipino.MainActivity" />
         </activity>
     </application>
 

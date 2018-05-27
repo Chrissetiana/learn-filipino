@@ -1,4 +1,4 @@
-package com.chrissetiana.android.learnfilipino;
+package com.chrissetiana.learnfilipino;
 
 import android.app.Activity;
 import android.support.annotation.NonNull;

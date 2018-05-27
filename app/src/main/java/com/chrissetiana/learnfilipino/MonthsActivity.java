@@ -1,4 +1,4 @@
-package com.chrissetiana.android.learnfilipino;
+package com.chrissetiana.learnfilipino;
 
 import android.content.Context;
 import android.media.AudioManager;
@@ -12,7 +12,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class DaysActivity extends AppCompatActivity {
+public class MonthsActivity extends AppCompatActivity {
 
     private AudioManager audioManager;
     private MediaPlayer mediaPlayer;
@@ -45,13 +45,18 @@ public class DaysActivity extends AppCompatActivity {
 
         final ArrayList<Word> words = new ArrayList<>();
 
-        words.add(new Word("monday", "lunes", R.mipmap.ic_launcher, R.raw.highhat));
-        words.add(new Word("tuesday", "martes", R.mipmap.ic_launcher, R.raw.highhat));
-        words.add(new Word("wednesday", "miyerkules", R.mipmap.ic_launcher, R.raw.highhat));
-        words.add(new Word("thursday", "huwebes", R.mipmap.ic_launcher, R.raw.highhat));
-        words.add(new Word("friday", "biyernes", R.mipmap.ic_launcher, R.raw.highhat));
-        words.add(new Word("saturday", "sabado", R.mipmap.ic_launcher, R.raw.highhat));
-        words.add(new Word("sunday", "linggo", R.mipmap.ic_launcher, R.raw.highhat));
+        words.add(new Word("january", "enero", R.mipmap.ic_launcher, R.raw.snare));
+        words.add(new Word("february", "pebrero", R.mipmap.ic_launcher, R.raw.snare));
+        words.add(new Word("march", "marso", R.mipmap.ic_launcher, R.raw.snare));
+        words.add(new Word("april", "abril", R.mipmap.ic_launcher, R.raw.snare));
+        words.add(new Word("may", "mayo", R.mipmap.ic_launcher, R.raw.snare));
+        words.add(new Word("june", "hunyo", R.mipmap.ic_launcher, R.raw.snare));
+        words.add(new Word("july", "hulyo", R.mipmap.ic_launcher, R.raw.snare));
+        words.add(new Word("august", "agosto", R.mipmap.ic_launcher, R.raw.snare));
+        words.add(new Word("september", "setyembre", R.mipmap.ic_launcher, R.raw.snare));
+        words.add(new Word("october", "oktubre", R.mipmap.ic_launcher, R.raw.snare));
+        words.add(new Word("november", "nobyembre", R.mipmap.ic_launcher, R.raw.snare));
+        words.add(new Word("december", "disyembre", R.mipmap.ic_launcher, R.raw.snare));
 
         WordAdapter adapter = new WordAdapter(this, words);
         ListView listView = findViewById(R.id.list_words);
@@ -62,11 +67,11 @@ public class DaysActivity extends AppCompatActivity {
                 releaseMediaPlayer();
 
                 Word currWord = words.get(position);
-                Log.v("DaysActivity", "Current word: " + currWord);
+                Log.v("MonthsActivity", "Current word: " + currWord);
 
                 int result = audioManager.requestAudioFocus(audioFocusChangeListener, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
                 if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-                    mediaPlayer = MediaPlayer.create(DaysActivity.this, currWord.getAudioResourceId());
+                    mediaPlayer = MediaPlayer.create(MonthsActivity.this, currWord.getAudioResourceId());
                     mediaPlayer.start();
                     mediaPlayer.setOnCompletionListener(completionListener);
                 }

@@ -1,4 +1,4 @@
-package com.chrissetiana.android.learnfilipino;
+package com.chrissetiana.learnfilipino;
 
 import android.content.Context;
 import android.media.AudioManager;
@@ -12,7 +12,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class NumbersActivity extends AppCompatActivity {
+public class DaysActivity extends AppCompatActivity {
 
     private AudioManager audioManager;
     private MediaPlayer mediaPlayer;
@@ -45,16 +45,13 @@ public class NumbersActivity extends AppCompatActivity {
 
         final ArrayList<Word> words = new ArrayList<>();
 
-        words.add(new Word("one", "isa", R.mipmap.ic_launcher, R.raw.ambient));
-        words.add(new Word("two", "dalawa", R.mipmap.ic_launcher, R.raw.ambient));
-        words.add(new Word("three", "tatlo", R.mipmap.ic_launcher, R.raw.ambient));
-        words.add(new Word("four", "apat", R.mipmap.ic_launcher, R.raw.ambient));
-        words.add(new Word("five", "lima", R.mipmap.ic_launcher, R.raw.ambient));
-        words.add(new Word("six", "anim", R.mipmap.ic_launcher, R.raw.ambient));
-        words.add(new Word("seven", "pito", R.mipmap.ic_launcher, R.raw.ambient));
-        words.add(new Word("eight", "walo", R.mipmap.ic_launcher, R.raw.ambient));
-        words.add(new Word("nine", "siyam", R.mipmap.ic_launcher, R.raw.ambient));
-        words.add(new Word("ten", "sampu", R.mipmap.ic_launcher, R.raw.ambient));
+        words.add(new Word("monday", "lunes", R.mipmap.ic_launcher, R.raw.highhat));
+        words.add(new Word("tuesday", "martes", R.mipmap.ic_launcher, R.raw.highhat));
+        words.add(new Word("wednesday", "miyerkules", R.mipmap.ic_launcher, R.raw.highhat));
+        words.add(new Word("thursday", "huwebes", R.mipmap.ic_launcher, R.raw.highhat));
+        words.add(new Word("friday", "biyernes", R.mipmap.ic_launcher, R.raw.highhat));
+        words.add(new Word("saturday", "sabado", R.mipmap.ic_launcher, R.raw.highhat));
+        words.add(new Word("sunday", "linggo", R.mipmap.ic_launcher, R.raw.highhat));
 
         WordAdapter adapter = new WordAdapter(this, words);
         ListView listView = findViewById(R.id.list_words);
@@ -65,11 +62,11 @@ public class NumbersActivity extends AppCompatActivity {
                 releaseMediaPlayer();
 
                 Word currWord = words.get(position);
-                Log.v("NumbersActivity", "Current word: " + currWord);
+                Log.v("DaysActivity", "Current word: " + currWord);
 
                 int result = audioManager.requestAudioFocus(audioFocusChangeListener, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
                 if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-                    mediaPlayer = MediaPlayer.create(NumbersActivity.this, currWord.getAudioResourceId());
+                    mediaPlayer = MediaPlayer.create(DaysActivity.this, currWord.getAudioResourceId());
                     mediaPlayer.start();
                     mediaPlayer.setOnCompletionListener(completionListener);
                 }

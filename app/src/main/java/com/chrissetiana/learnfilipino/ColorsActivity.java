@@ -1,4 +1,4 @@
-package com.chrissetiana.android.learnfilipino;
+package com.chrissetiana.learnfilipino;
 
 import android.content.Context;
 import android.media.AudioManager;
@@ -12,7 +12,7 @@ import android.widget.ListView;
 
 import java.util.ArrayList;
 
-public class PeopleActivity extends AppCompatActivity {
+public class ColorsActivity extends AppCompatActivity {
 
     private AudioManager audioManager;
     private MediaPlayer mediaPlayer;
@@ -45,17 +45,16 @@ public class PeopleActivity extends AppCompatActivity {
 
         final ArrayList<Word> words = new ArrayList<>();
 
-        words.add(new Word("father", "tatay / ama", R.mipmap.ic_launcher, R.raw.bass));
-        words.add(new Word("mother", "nanay / ina", R.mipmap.ic_launcher, R.raw.bass));
-        words.add(new Word("child", "anak", R.mipmap.ic_launcher, R.raw.bass));
-        words.add(new Word("sibling", "kapatid", R.mipmap.ic_launcher, R.raw.bass));
-        words.add(new Word("big brother", "kuya", R.mipmap.ic_launcher, R.raw.bass));
-        words.add(new Word("big sister", "ate", R.mipmap.ic_launcher, R.raw.bass));
-        words.add(new Word("grandfather", "lolo", R.mipmap.ic_launcher, R.raw.bass));
-        words.add(new Word("grandmother", "lola", R.mipmap.ic_launcher, R.raw.bass));
-        words.add(new Word("uncle", "tito", R.mipmap.ic_launcher, R.raw.bass));
-        words.add(new Word("aunt", "tita", R.mipmap.ic_launcher, R.raw.bass));
-        words.add(new Word("cousin", "pinsan", R.mipmap.ic_launcher, R.raw.bass));
+        words.add(new Word("black", "itim", R.mipmap.ic_launcher, R.raw.bongo));
+        words.add(new Word("blue", "asul", R.mipmap.ic_launcher, R.raw.bongo));
+        words.add(new Word("brown", "tsokolate", R.mipmap.ic_launcher, R.raw.bongo));
+        words.add(new Word("green", "berde", R.mipmap.ic_launcher, R.raw.bongo));
+        words.add(new Word("orange", "kahel", R.mipmap.ic_launcher, R.raw.bongo));
+        words.add(new Word("pink", "rosas", R.mipmap.ic_launcher, R.raw.bongo));
+        words.add(new Word("red", "pula", R.mipmap.ic_launcher, R.raw.bongo));
+        words.add(new Word("violet", "lila", R.mipmap.ic_launcher, R.raw.bongo));
+        words.add(new Word("yellow", "dilaw", R.mipmap.ic_launcher, R.raw.bongo));
+        words.add(new Word("white", "puti", R.mipmap.ic_launcher, R.raw.bongo));
 
         WordAdapter adapter = new WordAdapter(this, words);
         ListView listView = findViewById(R.id.list_words);
@@ -66,11 +65,11 @@ public class PeopleActivity extends AppCompatActivity {
                 releaseMediaPlayer();
 
                 Word currWord = words.get(position);
-                Log.v("PeopleActivity", "Current word: " + currWord);
+                Log.v("ColorsActivity", "Current word: " + currWord);
 
                 int result = audioManager.requestAudioFocus(audioFocusChangeListener, AudioManager.STREAM_MUSIC, AudioManager.AUDIOFOCUS_GAIN_TRANSIENT);
                 if (result == AudioManager.AUDIOFOCUS_REQUEST_GRANTED) {
-                    mediaPlayer = MediaPlayer.create(PeopleActivity.this, currWord.getAudioResourceId());
+                    mediaPlayer = MediaPlayer.create(ColorsActivity.this, currWord.getAudioResourceId());
                     mediaPlayer.start();
                     mediaPlayer.setOnCompletionListener(completionListener);
                 }
